@@ -6,7 +6,7 @@ import dataInfo.*;
 public interface CountryDAO {
 	
 	public ArrayList<Country> getCustomers();
-	public Country findCountryByName();
-	public Country findCountryByCode();
+	public Country findCountryByName(String name);
+	public Country findCountryByCode(String code);
 	public boolean saveCustomer(Country country);
 }

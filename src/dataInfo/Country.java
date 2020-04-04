@@ -19,6 +19,37 @@ public class Country {
 		this.continent = builder.continent;
 		this.surfaceArea = builder.surfaceArea;
 	}
+	
+	
+	/*Because of the implementation of the builder pattern 
+	 * there is no reason to add setters to the code.
+	 * Although Getters are needed to access the variables.
+	 * Like in case we want to save a new country to the database,
+	 * it would be needed to access the variables through getters*/
+	public String getCode() {
+		return code;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public Continent getContinent() {
+		return continent;
+	}
+
+
+	public float getSurfaceArea() {
+		return surfaceArea;
+	}
+
+
+	public String getHeadOfState() {
+		return headOfState;
+	}
+
 
 	@Override
 	public String toString() {
