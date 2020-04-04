@@ -8,7 +8,9 @@ import java.sql.Statement;
 
 public class DataSource {
 	
-	private static DataSource dbcnSingleton;
+	/*Static variable of type of the class
+	 * which will be returned by the getInstance method*/
+	private static DataSource instance;
 	private String db = "jdbc:mysql://apontejaj.com:3306/customer";
 	private String un = "cctstudent";
 	private String pw = "Pass1234!";
@@ -85,4 +87,22 @@ public class DataSource {
 		}
 
 	}
+	
+	/*getInstance method to be able to initialized
+	 * or DataSource object
+	 * Note we are using synchronized method to add
+	 * thread safety*/
+	public static DataSource getInstance() {
+		
+		if(instance == null) {
+			synchronized (DataSource.class) {
+				if(instance == null) {
+					instance = new DataSource ();
+				}	
+			}
+		}
+		
+		return instance;
+	}
+	
 }
