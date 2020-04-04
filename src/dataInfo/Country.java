@@ -37,16 +37,17 @@ public class Country {
 		private String headOfState = "";
 
 		//builder constructor receiving mandatory variables
-		public Builder (String code, String name, Continent continent, float srufaceArea) {
+		public Builder (String code, String name, Continent continent, float surfaceArea) {
 			this.code = code;
 			this.name = name;
 			this.continent = continent;
-			this.surfaceArea = srufaceArea;
+			this.surfaceArea = surfaceArea;
 		}
 
 		//method to populate the optional field
 		// Which also returns an instance of builder
 		public Builder headOfState(String headOfState) {
+			this.headOfState = headOfState;
 			return this;
 		}
 
