@@ -48,7 +48,7 @@ public class MainApp {
 			String userChoise = userInput();
 
 			if (userChoise.equals("1")) {
-				getCountryInfo();
+				addCountry();
 			} else if(userChoise.equals("2")) {
 				getAllCountries();
 			} else if(userChoise.equals("3")) {
@@ -59,7 +59,7 @@ public class MainApp {
 //				exitProgram();
 				connectionOpen = false;
 			} else {
-				System.out.println("Please one of the available options");
+				System.out.println("Pleasone of the available options");
 			}
 		}while (connectionOpen);
 
@@ -80,7 +80,8 @@ public class MainApp {
 	}
 	
 	
-	public Country getCountryInfo() {
+	public void addCountry() {
+		//Get the info of the country to add
 		System.out.println("Type the Code of the country");
 		this.code = userInput();
 		System.out.println("Type the Name of the country");
@@ -91,26 +92,15 @@ public class MainApp {
 		this.surfaceArea = Float.valueOf(userInput());
 		System.out.println("Type the Head of State of the country");
 		this.headOfState = userInput();
-
-		Country country = new Country.Builder(code, name, continent, surfaceArea).headOfState(headOfState).countryBuilder();
-				
 		
+		//Creates the new country to be added
+		Country country = new Country.Builder(code, name, continent, surfaceArea).headOfState(headOfState).countryBuilder();
+		
+		//Call the method from MySqlCountry class to save the new entry
 		dao.saveCountry(country);
 		
-		return country;
 	}
 
-
-	//Method to allow user to save a country
-//	public boolean addCountry() {
-//		
-//		try{
-//			return dao.saveCountry(getCountryInfo());
-//		} catch (Exception e) {
-//			System.out.println(e.getMessage());
-//			return false;
-//		}
-//	}
 
 	//Method for the user get all countries
 	public ArrayList<Country> getAllCountries(){
@@ -126,7 +116,6 @@ public class MainApp {
 	//Method to allow the user find  country by its code
 	public Country getCountryByCode() {
 		System.out.println("Please enter country's code");
-		System.out.println("Please put the Country's code between '  '");
 		code = userInput();
 		return dao.findCountryByCode(code);
 	}
@@ -134,7 +123,6 @@ public class MainApp {
 	//Method to allow the user find  country by its name
 	public Country getCountryByName() {
 		System.out.println("Please enter country's name");
-		System.out.println("Please put the Country's name between '  '");
 		name = userInput();
 		return dao.findCountryByName(name);
 	}

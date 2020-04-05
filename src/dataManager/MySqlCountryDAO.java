@@ -67,7 +67,7 @@ public class MySqlCountryDAO implements CountryDAO{
 		//optional variable
 		String headOfState = "";
 
-		String query = "SELECT * FROM country WHERE name = " + name + ";";
+		String query = "SELECT * FROM country WHERE name = '" +name+ "';";
 
 		ResultSet rs = dSource.select(query);
 
@@ -105,7 +105,7 @@ public class MySqlCountryDAO implements CountryDAO{
 		//optional variable
 		String headOfState = "";
 
-		String query = "SELECT * FROM country WHERE code = " +code+ ";";
+		String query = "SELECT * FROM country WHERE code = '" +code+ "';";
 
 		ResultSet rs = dSource.select(query);
 
@@ -141,9 +141,8 @@ public class MySqlCountryDAO implements CountryDAO{
 		float surfaceArea = country.getSurfaceArea();
 		String headOfState = country.getHeadOfState();
 
-		String query = "INSERT INTO country (Code, Name, Continent, SurfaceArea, HeadOfState) VALUES ('"+code+"', '"+name+"', "
+		String query = "INSERT INTO country (code, name, continent, surfacearea, headofstate) VALUES ('"+code+"', '"+name+"', "
 				+ "'"+continent+"', '"+surfaceArea+"','"+headOfState+"');";
-		System.out.println(query);
 		
 		return dSource.save(query);
 	}

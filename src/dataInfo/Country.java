@@ -18,6 +18,7 @@ public class Country {
 		this.name = builder.name;
 		this.continent = builder.continent;
 		this.surfaceArea = builder.surfaceArea;
+		this.headOfState = builder.headOfState;
 	}
 	
 	
