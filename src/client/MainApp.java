@@ -92,7 +92,7 @@ public class MainApp {
 		System.out.println("Type the Head of State of the country");
 		this.headOfState = userInput();
 
-		Country country = new Country.Builder(code, name, continent, surfaceArea).headOfState(headOfState).countryBuilder()
+		Country country = new Country.Builder(code, name, continent, surfaceArea).headOfState(headOfState).countryBuilder();
 				
 		
 		dao.saveCountry(country);
