@@ -5,6 +5,7 @@ import dataInfo.*;
 
 public interface CountryDAO {
 	
+	//Mandatory methods according requirements that need to be implemented
 	public ArrayList<Country> getCountries();
 	public Country findCountryByName(String name);
 	public Country findCountryByCode(String code);

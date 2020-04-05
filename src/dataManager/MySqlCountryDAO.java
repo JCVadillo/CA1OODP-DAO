@@ -131,7 +131,7 @@ public class MySqlCountryDAO implements CountryDAO{
 
 	/*Method to add a new country to the data base, 
 	 * it requires as parameter the country to be added
-	 * and here is when the getters are going to be called*/
+	 * and here is when the getters are going to be needed*/
 	@Override
 	public boolean saveCountry(Country country) {
 
