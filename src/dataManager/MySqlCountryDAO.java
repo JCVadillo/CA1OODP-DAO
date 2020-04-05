@@ -142,7 +142,7 @@ public class MySqlCountryDAO implements CountryDAO{
 		String headOfState = country.getHeadOfState();
 
 		String query = "INSERT INTO country (Code, Name, Continent, SurfaceArea, HeadOfState) VALUES ('"+code+"', '"+name+"', "
-				+ "'"+continent+"', '"+surfaceArea+"','"+headOfState+"';";
+				+ "'"+continent+"', '"+surfaceArea+"','"+headOfState+"');";
 		System.out.println(query);
 		
 		return dSource.save(query);

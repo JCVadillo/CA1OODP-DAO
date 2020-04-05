@@ -59,7 +59,7 @@ public class MainApp {
 //				exitProgram();
 				connectionOpen = false;
 			} else {
-				System.out.println("Print one of the available options");
+				System.out.println("Please one of the available options");
 			}
 		}while (connectionOpen);
 
