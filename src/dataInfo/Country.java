@@ -65,7 +65,7 @@ public class Country {
 		private Continent continent = null; 
 		private float surfaceArea = 0;
 		//optional variable
-		private String headOfState = "";
+		private String headOfState;
 
 		//builder constructor receiving mandatory variables
 		public Builder (String code, String name, Continent continent, float surfaceArea) {
@@ -86,6 +86,7 @@ public class Country {
 		public Country countryBuilder() {
 			return new Country(this);
 		}
+
 	}
 
 }

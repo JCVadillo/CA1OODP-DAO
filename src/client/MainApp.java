@@ -48,7 +48,7 @@ public class MainApp {
 			String userChoise = userInput();
 
 			if (userChoise.equals("1")) {
-				addCountry();
+				getCountryInfo();
 			} else if(userChoise.equals("2")) {
 				getAllCountries();
 			} else if(userChoise.equals("3")) {
@@ -56,7 +56,7 @@ public class MainApp {
 			} else if(userChoise.equals("4")) {
 				getCountryByName();
 			} else if(userChoise.equals("5")) {
-				exitProgram();
+//				exitProgram();
 				connectionOpen = false;
 			} else {
 				System.out.println("Print one of the available options");
@@ -92,24 +92,25 @@ public class MainApp {
 		System.out.println("Type the Head of State of the country");
 		this.headOfState = userInput();
 
-		Country country = new Country.Builder(code, name, continent, surfaceArea)
-				.headOfState(headOfState).countryBuilder();
-
+		Country country = new Country.Builder(code, name, continent, surfaceArea).headOfState(headOfState).countryBuilder()
+				
+		
+		dao.saveCountry(country);
+		
 		return country;
-
 	}
 
 
 	//Method to allow user to save a country
-	public boolean addCountry() {
-		getCountryInfo();
-		try{
-			return dao.saveCountry(getCountryInfo());
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			return false;
-		}
-	}
+//	public boolean addCountry() {
+//		
+//		try{
+//			return dao.saveCountry(getCountryInfo());
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
+//			return false;
+//		}
+//	}
 
 	//Method for the user get all countries
 	public ArrayList<Country> getAllCountries(){
@@ -125,6 +126,7 @@ public class MainApp {
 	//Method to allow the user find  country by its code
 	public Country getCountryByCode() {
 		System.out.println("Please enter country's code");
+		System.out.println("Please put the Country's code between '  '");
 		code = userInput();
 		return dao.findCountryByCode(code);
 	}
@@ -132,12 +134,13 @@ public class MainApp {
 	//Method to allow the user find  country by its name
 	public Country getCountryByName() {
 		System.out.println("Please enter country's name");
+		System.out.println("Please put the Country's name between '  '");
 		name = userInput();
 		return dao.findCountryByName(name);
 	}
 	
 	//Methos to allow user close connection
-	public void exitProgram() {
-		dao.closingConnection();
-	}
+//	public void exitProgram() {
+//		dao.closingConnection();
+//	}
 }
