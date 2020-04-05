@@ -8,5 +8,5 @@ public interface CountryDAO {
 	public ArrayList<Country> getCustomers();
 	public Country findCountryByName(String name);
 	public Country findCountryByCode(String code);
-	public boolean saveCustomer(Country country);
+	public boolean saveCountry(Country country);
 }

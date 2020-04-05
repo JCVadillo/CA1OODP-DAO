@@ -13,7 +13,9 @@ public class MySqlCountryDAO implements CountryDAO{
 	/*calling the getInstance method from
 	 *  DataSource to be able to initialized 
 	 *  the data base connection*/
-	private DataSource dSource = DataSource.getInstance();
+	
+	
+	DataSource dSource = DataSource.getInstance();
 
 
 	/*Method to list all countries in the database*/
@@ -128,7 +130,7 @@ public class MySqlCountryDAO implements CountryDAO{
 	 * it requires as parameter the country to be added
 	 * and here is when the getters are going to be called*/
 	@Override
-	public boolean saveCustomer(Country country) {
+	public boolean saveCountry(Country country) {
 
 		String code  = country.getCode();
 		String name = country.getName();
