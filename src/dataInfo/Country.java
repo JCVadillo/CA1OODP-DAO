@@ -53,7 +53,7 @@ public class Country {
 
 	@Override
 	public String toString() {
-		return "Country code = "+code+ ", Name = "+name+",Continent =  "+continent+", Surface Area = "
+		return "Country code = "+code+ ", Name = "+name+", Continent =  "+continent+", Surface Area = "
 				+surfaceArea+", Head of State = " +headOfState+"";
 	}
 

@@ -9,7 +9,7 @@ public enum Continent {
 	NORTH_AMERICA("North America"),
 	AFRICA("Africa"),
 	OCEANIA("Oceania"),
-	ANTARTICA("Antartica"),
+	ANTARCTICA("Antarctica"),
 	SOUTH_AMERICA("South America");
 	
 	private String continent = "";

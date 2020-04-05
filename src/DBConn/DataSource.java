@@ -11,7 +11,7 @@ public class DataSource {
 	/*Static variable of type of the class
 	 * which will be returned by the getInstance method*/
 	private static DataSource instance;
-	private String db = "jdbc:mysql://apontejaj.com:3306/customer";
+	private String db = "jdbc:mysql://apontejaj.com:3306/world";
 	private String un = "cctstudent";
 	private String pw = "Pass1234!";
 	

@@ -20,7 +20,7 @@ public class MySqlCountryDAO implements CountryDAO{
 
 	/*Method to list all countries in the database*/
 	@Override
-	public ArrayList<Country> getCustomers() {
+	public ArrayList<Country> getCountries() {
 
 		ArrayList<Country> countries = new ArrayList<Country>();
 		//Mandatory variables
@@ -40,13 +40,14 @@ public class MySqlCountryDAO implements CountryDAO{
 			while(rs.next()) {
 				code = rs.getString(1);
 				name = rs.getString(2);
-				continent = Continent.valueOf(rs.getString(3));
+				continent = Continent.valueOf(rs.getString(3).toUpperCase().replace(" ", "_"));
 				surfaceArea = rs.getFloat(4);
 				headOfState = rs.getString(5);
 				//Creating Country by using the builder
 				Country c = new Country.Builder(code, name, continent, surfaceArea).headOfState(headOfState).countryBuilder();
 
 				countries.add(c);
+				System.out.println(c);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -80,7 +81,8 @@ public class MySqlCountryDAO implements CountryDAO{
 
 				//again using the builder to create the country to be retrieved 
 				Country c = new Country.Builder(code, name, continent, surfaceArea).headOfState(headOfState).countryBuilder();
-
+				
+				System.out.println(c);
 				return c;
 			}
 			return null;
@@ -114,7 +116,7 @@ public class MySqlCountryDAO implements CountryDAO{
 				surfaceArea = rs.getFloat(4);
 				headOfState = rs.getString(5);
 				Country c = new Country.Builder(code, name, continent, surfaceArea).headOfState(headOfState).countryBuilder();
-
+				System.out.println(c);
 				return c;
 			}
 			return null;
@@ -143,5 +145,13 @@ public class MySqlCountryDAO implements CountryDAO{
 
 		return dSource.save(query);
 	}
+
+
+	@Override
+	public void closingConnection() {
+		dSource.closing();
+	}
+	
+	
 
 }
