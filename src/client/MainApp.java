@@ -35,7 +35,7 @@ public class MainApp {
 	public void menu() {
 		boolean connectionOpen = true;
 
-		do {
+		do {//loop for coming back to the menu unless the option selected is number 5
 			System.out.println("Welcome to World DataBase");
 			System.out.println("Please choose one of the following option");
 			System.out.println("Press 1 to Save a new country");
