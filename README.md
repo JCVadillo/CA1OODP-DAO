@@ -1,4 +1,4 @@
-# CA1OODP-DAO
+# CA1OODP-Data Access Object
 
 The Creational OODP chosen for this project were the Singleton Pattern with the Double Check variation and the Builder Patter
 
